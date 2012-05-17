@@ -1,0 +1,794 @@
+<html> 
+  <head> 
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]--> 
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]--> 
+    <meta charset="utf-8" />
+    <title>WordCamp Seattle 2012</title>
+<style type="text/css" media="projection, screen">
+body{font-size:20px;font-family:'helvetica', sans-serif;width:100%;height:100%;position:absolute;left:0;top:0;color:#535353;margin:0;padding:0;}
+a{color:#535353;}
+a:hover,a.visited{color:#000;}
+#info{position:absolute;bottom:15px;font-size:10px;left:40%;z-index:500;}
+.key{color:#000;display:inline-block;text-shadow:none;letter-spacing:0;bottom:5px;position:relative;background:#FFF;padding:3px;}
+#presentation{position:absolute;height:100%;width:100%;left:0;top:0;display:block;overflow:hidden;background:#7c7d7e;}
+.slides{padding-top:10px;padding-bottom:10px;width:100%;height:100%;left:0;top:0;position:absolute;display:block;-webkit-transition:0 1s ease-in-out;-moz-transition:0 1s ease-in-out;-o-transition:0 1s ease-in-out;transition:transform 1s ease-in-out;-webkit-transform:scale(0.8);-moz-transform:scale(0.8);-o-transform:scale(0.8);transform:scale(0.8);}
+.slide{display:none;position:absolute;overflow:hidden;width:920px;height:710px;left:50%;top:50%;margin-top:-360px;background-color:#e3e5e9;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out;-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);transform:scale(1);padding-left:0;padding-top:10px;}
+.slide.intro hgroup{margin-top:200px;}
+.content{font-size:120%;padding:0 20px;}
+.content input,button{font-size:110%;}
+.content td,.content th{border-bottom:1px solid #000;border-right:1px solid #000;font-size:150%;padding:10px;}
+.content table{border-top:1px solid #000;border-left:1px solid #000;border-collapse:collapse;}
+.invalid{background-color:red;}
+.slide.section,.slide.intro header{font-size:200%;}
+.slide li{margin-bottom:10px;}
+.slide img{max-height:90%;border:1px solid #FFF;box-shadow:rgba(0, 0, 0, 0.1) 0 2px 5px;-webkit-box-shadow:rgba(0, 0, 0, 0.1) 0 2px 5px;-moz-box-shadow:rgba(0, 0, 0, 0.1) 0 2px 5px;text-align:center;}
+.slide p,.slide textarea{font-size:120%;}
+.slide .counter{color:#999;position:absolute;left:20px;bottom:20px;display:block;font-size:70%;}
+.slide.title > .counter,.slide.segue > .counter,.slide.mainTitle > .counter{display:none;}
+.force-render{display:block;visibility:hidden;}
+.slide.far-past{display:block;margin-left:-2400px;}
+.slide.past{visibility:visible;display:block;margin-left:-1400px;}
+.slide.current{visibility:visible;display:block;margin-left:-450px;}
+.slide.future{visibility:visible;display:block;margin-left:500px;}
+.slide.far-future{display:block;margin-left:1500px;}
+.slide.intro,.slide.section,.slide.intro{text-align:center;}
+body.three-d div.slides{-webkit-transform:translateX(50px) scale(0.8) rotateY(10deg);-moz-transform:translateX(50px) scale(0.8) rotateY(10deg);-o-transform:translateX(50px) scale(0.8) rotateY(10deg);transform:translateX(50px) scale(0.8) rotateY(10deg);}
+header{font-weight:400;left:30px;top:25px;text-align:center;padding:20px;}
+h1,h2{margin-bottom:0;font-weight:400;font-family:"Helvetica Neue", sans-serif;}
+.intro h1{margin-top:40px;font-size:160%;}
+.normal h1{font-size:180%;text-transform:uppercase;}
+.normal h1 span {text-transform:lowercase;}
+h2{font-size:140%;}
+section,footer{display:block;overflow:hidden;margin:20px 30px 0;}
+footer{font-size:100%;margin:20px 0 0 30px;}
+pre{text-align:left;font-size:70%;background:#ecf6fd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;border:1px solid #535353;font-family:"Courier New", Courier, monospace;margin:0;padding:5px;}
+:not(header) > .key{bottom:4px;margin:0 5px;}
+#presentation-counter{color:#ccc;font-size:70%;letter-spacing:1px;position:absolute;top:40%;left:0;width:100%;text-align:center;}
+div:not(.current).reduced{-webkit-transform:scale(0.8);-moz-transform:scale(0.8);-o-transform:scale(0.8);transform:scale(0.8);}
+.no-transitions{-webkit-transition:none;-moz-transition:none;-o-transition:none;transition:none;}
+.no-gradients{background:none;background-color:#fff;}
+</style>  
+<style type="text/css" media="print">
+.slide{page-break-inside:avoid;page-break-after:always;visibility:visible !important;font-size:20pt;font-family:Arial, sans-serif;}
+@page{size:landscape;}
+body{font-size:12pt;background:#FFF;}
+header h1{border-top:2pt solid gray;border-bottom:1px dotted silver;}
+#presentation-counter,#info,.counter{display:none;}
+</style>
+</head> 
+<body> 
+  
+  <div id="info">
+    <p>Press <span class="key">&rarr;</span> key to advance. Zoom in/out: <span class="key">Ctrl or Command</span> + <span class="key">+/-</span>. </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+    
+    <div class="slide intro"> 
+     <header>
+		<h1>How to Build a Custom Portfolio Feature Slider</h1>
+	 </header>
+	 <section class="content"> 
+		<p>Bluelime Media<br>
+			<small>(Langara, BCIT, Vancouver, BC)</small><br><br>
+			
+			<a href="http://www.bluelimemedia.com">bluelimemedia.com</a><br>
+			<a href="http://www.wpyogi.com">wpyogi.com</a><br><br>
+			@bluelimemedia<br>
+			</p>
+
+	 </section>
+    </div> 
+    
+
+<div class="slide normal"> 
+ <header><h1>Plugin or Not?</h1></header> 
+ <section class="content"> 
+	<p>Use a plugin if:</p>
+	<ul>
+		<li>You might want to change theme later</li>
+		<li>You just want to use an existing theme</li>
+	</ul>
+	<p>Don't use a plugin if:</p>
+	<ul>
+		<li>You want control of functionality</li>
+		<li>You’re building a site for a client with specific requirements</li>
+	</ul>
+ </section>
+</div>
+
+
+<div class="slide normal"> 
+ <header><h1>The right theme for the job</h1></header> 
+ <section class="content"> 
+	<p>When building custom themes, it's best to start with a stripped down theme.</p>
+	<ul>
+		<li><a href="http://wordpress.org/extend/themes/sandbox">Sandbox</a></li>
+		<li><a href="http://digwp.com/2010/02/blank-wordpress-theme/">Blank</a></li>
+		<li>Starkers</li>
+		<li><a href="https://github.com/Automattic/_s">Automattic's _s</a></li>
+		<li><a href="https://github.com/crondeau/BLM-Basic-Starter-WordPress-Theme-HTML5">Bluelime Media Basic</a></li>
+	</ul>
+ </section>
+</div>
+
+
+
+<div class="slide normal"> 
+ <header><h1>Treat it like a Puzzle</h1></header> 
+ <section class="content"> 
+	<ol>
+		<li>Find the right slider for you</li>
+		<li>Make it work your images</li>
+		<li>Incorporate it in your theme</li>
+	</ol>
+	
+	<p>Sliders to consider:</p>
+	<ul>
+		<li><a href="http://css-tricks.com/anythingslider-jquery-plugin/">Anything Slider</a></li>
+		<li><a href="http://slidesjs.com/">Slides</a></li>
+		<li><a href="http://www.woothemes.com/flexslider/">FlexSlider</a></li>
+	</ul>
+ </section>
+</div>
+
+<div class="slide normal"> 
+ <header><h1>What's a Slider?</h1></header> 
+ <section class="content"> 
+	<ul>
+		<li>JQuery</li>
+		<li>CSS</li>
+		<li>List of images</li>
+	</ul>
+
+ </section>
+</div>
+
+
+<div class="slide normal"> 
+ <header><h1>Code Example</h1></header> 
+ <section class="content"> 
+	<p>JQuery and CSS in the header</p>
+	
+	<pre>
+		
+ &lt;link rel="stylesheet" href="css/global.css"&gt;	
+ &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/
+ jquery.min.js"&gt;&lt;/script&gt;
+ &lt;script src="js/slides.min.jquery.js"&gt;&lt;/script&gt;
+ &lt;script&gt;
+	$(function(){
+		$('#slideshow').slides({
+			preload: true,
+			preloadImage: 'images/loading.gif',
+			effect: 'fade',
+			play:3000,
+			crossfade: true,
+			fadeSpeed: 500,
+		});
+	});
+ &lt;/script&gt;
+
+</pre>
+
+ </section>
+</div>
+
+<div class="slide normal"> 
+ <header><h1>Code Example <span>cont...</span></h1></header> 
+ <section class="content"> 
+	<p>HTML in the body</p>
+	
+	<pre>	
+ &lt;div id="slideshow"&gt;
+   &lt;div class="slides_container"&gt;
+	&lt;img src="images/1.jpg" width="640" height="400" alt="1"&gt;
+	&lt;img src="images/2.jpg" width="640" height="400" alt="2"&gt;
+	&lt;img src="images/3.jpg" width="640" height="400" alt="3"&gt;
+   &lt;/div&gt;	
+ &lt;/div&gt;
+
+</pre>
+
+ </section>
+</div>
+
+
+<div class="slide normal"> 
+ <header><h1>Step 1: Enqueuing JQuery </h1></header> 
+ <section class="content"> 
+	<p>The safe and recommended method of adding JavaScript to a WordPress generated page is by using wp_enqueue_script();</p>
+	
+<pre>	
+ wp_enqueue_script( 
+   $handle, $src, $deps, $ver, $in_footer 
+ );
+
+</pre>
+<p></p>
+<pre>
+
+ function blm_init_method() {
+   wp_enqueue_script('jquery');
+   wp_enqueue_script( 'slides', get_template_directory_uri().'/
+   js/slides.min.jquery.js', array( 'jquery' ) );
+   }
+ add_action('wp_enqueue_scripts', 'blm_init_method');	
+
+</pre>
+
+ </section>
+</div>
+
+<div class="slide normal"> 
+ <header><h1>Step 2: Include your Event Function</h1></header> 
+ <section class="content"> 
+	<p>Your header file needs to be updated with the jQuery event function required for your slider.</p>
+
+<pre>
+ &lt;script&gt;	
+jQuery(document).ready(function( $ ) {
+  $('#slideshow').slides({
+    preload: true,
+    preloadImage: &lt;?php echo get_template_directory_uri(); ?&gt;/'images/loading.gif',
+    effect: 'fade',
+    play:3000,
+    crossfade: true,
+    fadeSpeed: 500,
+});
+&lt;/script&gt;
+</pre>
+<p>Note the use of <strong>jQuery(document).ready(function( $ )</strong><br> instead of 
+ $(document).ready(function()
+ </section>
+</div>
+
+
+<div class="slide normal"> 
+ <header><h1>Step 3: CSS</h1></header> 
+ <section class="content"> 
+	<p>Update your CSS.</p>
+	
+	<p>Nothing too fancy here.</p>	
+
+ </section>
+</div>
+
+
+<div class="slide normal"> 
+	<header><h1>Step 4: List your images</h1></header> 
+	<section class="content"> 
+		
+		<h2>Method 1</h2>
+		<ul>
+			<li>Use wp_get_attachment_image()</li>
+			
+		</ul>
+			
+</section>
+</div>
+
+
+<div class="slide normal"> 
+	<header><h1>wp_get_attachment_image()</h1></header> 
+	<section class="content"> 
+<pre>
+	
+ &lt;?php if (have_posts()) : while (have_posts()) : the_post();
+   $args = array(
+     'post_type' =&gt; 'attachment',
+     'numberposts' =&gt; -1,
+     'orderby'=&gt; 'menu_order',
+     'order' =&gt; 'ASC',
+     'post_mime_type' =&gt; 'image',
+     'post_parent' =&gt; $post-&gt;ID
+   );    
+
+   $attachments = get_posts( $args );
+     if ( $attachments ) {
+       foreach ( $attachments as $attachment ) {
+         echo wp_get_attachment_image( $attachment-&gt;ID, 'full' );
+    }
+  } ?&gt;
+	
+</pre>
+	</section>
+</div>
+<div class="slide normal"> 
+	<header><h1>Final Template</h1></header> 
+	<section class="content"> 
+<pre>
+ &lt;?php if (have_posts()) : while (have_posts()) : the_post();
+   $args = array(
+     'post_type' =&gt; 'attachment',
+     'numberposts' =&gt; -1,
+     'orderby'=&gt; 'menu_order',
+     'order' =&gt; 'ASC',
+     'post_mime_type' =&gt; 'image',
+     'post_parent' =&gt; $post-&gt;ID
+   ); ?&gt;
+  &lt;article id="post-&lt;?php the_ID(); ?&gt;" &lt;?php post_class(); ?&gt;&gt;
+    &lt;h1&gt;&lt;?php the_title(); ?&gt;&lt;/h1&gt;
+      &lt;?php the_content(); ?&gt;
+   &lt;/article&gt;
+   &lt;aside&gt;
+     &lt;div id="slideshow"&gt;
+       &lt;div class="slides_container"&gt;
+      &lt;?php
+       $attachments = get_posts( $args );
+        if ( $attachments ) {
+	      foreach ( $attachments as $attachment ) {
+          echo wp_get_attachment_image($attachment-&gt;ID , 'full' );
+          }
+         }?&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
+&lt;?php endwhile; endif; ?&gt;	
+</pre>
+		
+		
+</section>
+</div>
+
+<div class="slide normal"> 
+	<header><h1>Step 4: List your images <span>cont...</span></h1></header> 
+	<section class="content"> 
+		
+		<h2>Method 2</h2>
+		<ul>
+			<li>Use Custom Post Types</li>
+		</ul>
+			
+</section>
+</div>
+
+<div class="slide normal"> 
+	<header><h1>Creating CPTs</h1></header> 
+	<section class="content"> 
+		
+	<ul>
+		<li>Register your post type by including the code in your functions.php file</li>
+		<li>OR</li>
+		<li>Use a plugin such as <a href="http://wordpress.org/extend/plugins/custom-post-type-ui/">Custom Post Type UI</a> or <a href="http://wordpress.org/extend/plugins/sld-custom-content-and-taxonomies/">Stresslimit Custom Content Types</a></li>
+	</ul>
+		
+	
+</section>
+</div>
+
+
+<div class="slide normal"> 
+	<header><h1>Custom Post Types</h1></header> 
+	<section class="content"> 
+		
+		<p>Custom Post Types can be used to set up specific content types to create a slider.</p>
+		
+		<img src="CPT.png" width="800" height="424" alt="CPT">	
+</section>
+</div>
+
+<div class="slide normal"> 
+	<header><h1>Display your CPTs</h1></header> 
+	<section class="content"> 
+		
+<pre>&lt;section id="featured-slider"&gt;
+  &lt;div id="slides"&gt;
+   &lt;div&gt;
+    &lt;?php
+    $loop = new WP_Query (
+    array ( 
+      'post_type' =&gt; 'feature', 
+      'posts_per_page' =&gt; -1, 
+      'orderby'=&gt; 'ASC'
+      )
+    );
+  
+    while ( $loop-&gt;have_posts() ) : $loop-&gt;the_post(); ?&gt;
+...
+</pre>
+		
+</section>
+</div>
+
+<div class="slide normal"> 
+	<header><h1>Display your CPTs, <span>cont...</span></h1></header> 
+	<section class="content"> 
+		
+<pre>
+     &lt;div&gt;
+      &lt;?php $url = get_post_meta($post-&gt;ID, "url", true);
+      if($url!='') {
+        echo '&lt;a href="'.$url.'"&gt;';
+        echo the_post_thumbnail('full');
+        echo '&lt;/a&gt;';
+      } else {
+        echo the_post_thumbnail('full');
+      } ?&gt;
+       &lt;div&gt;
+       &lt;h5&gt;&lt;?php the_title(); ?&gt;&lt;/h5&gt;
+       &lt;?php the_content(); ?&gt;
+       &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;?php endwhile; ?&gt;
+    &lt;?php wp_reset_query(); ?&gt;
+    &lt;/div&gt;
+    &lt;a href="#"&gt;prev&lt;/a&gt;
+    &lt;a href="#"&gt;next&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+   
+</section>
+</div>
+
+<div class="slide normal"> 
+	<header><h1>Portfolio Demo</h1></header> 
+	<section class="content"> 
+		<p>A demo website can be viewed at <a href="http://portfolio-demo.bluelimemedia.com">portfolio-demo.bluelimemedia.com</a></p>
+		
+		<p>The files for this demo and tutorials are provided in two parts.</p>
+		
+		<ul>
+			<li>Part 1: <a href="https://github.com/crondeau/BLM-WordPress-Slider-Tutorial">http://www.bluelimemedia.com/2012/02/27/build-a-custom-fade-in-fade-out-slideshow/</a></li>
+			<li>Part 2: <a href="https://github.com/crondeau/BLM-WordPress-Tutorial-Slider-part2/tree/master/portfolio-demo">Build a custom image slider using a Custom Post Type</a></li>
+		</ul>
+		
+		<p><a href="http://www.bluelimemedia.com">bluelimemedia.com</a><br>
+		<a href="http://www.wpyogi.com">wpyogi.com</a></p>
+   
+</section>
+</div>
+
+  <script>
+  (function() {
+  var doc = document;
+  var disableBuilds = true;
+
+  var ctr = 0;
+  var spaces = /\s+/, a1 = [''];
+
+  var toArray = function(list) {
+    return Array.prototype.slice.call(list || [], 0);
+  };
+
+  var byId = function(id) {
+    if (typeof id == 'string') { return doc.getElementById(id); }
+    return id;
+  };
+
+  var query = function(query, root) {
+    if (!query) { return []; }
+    if (typeof query != 'string') { return toArray(query); }
+    if (typeof root == 'string') {
+      root = byId(root);
+      if(!root){ return []; }
+    }
+
+    root = root || document;
+    var rootIsDoc = (root.nodeType == 9);
+    var doc = rootIsDoc ? root : (root.ownerDocument || document);
+
+    // rewrite the query to be ID rooted
+    if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
+      root.id = root.id || ('qUnique' + (ctr++));
+      query = '#' + root.id + ' ' + query;
+    }
+    // don't choke on something like ".yada.yada >"
+    if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
+
+    return toArray(doc.querySelectorAll(query));
+  };
+
+  var strToArray = function(s) {
+    if (typeof s == 'string' || s instanceof String) {
+      if (s.indexOf(' ') < 0) {
+        a1[0] = s;
+        return a1;
+      } else {
+        return s.split(spaces);
+      }
+    }
+    return s;
+  };
+
+  var addClass = function(node, classStr) {
+    classStr = strToArray(classStr);
+    var cls = ' ' + node.className + ' ';
+    for (var i = 0, len = classStr.length, c; i < len; ++i) {
+      c = classStr[i];
+      if (c && cls.indexOf(' ' + c + ' ') < 0) {
+        cls += c + ' ';
+      }
+    }
+    node.className = cls.trim();
+  };
+
+  var removeClass = function(node, classStr) {
+    var cls;
+    if (classStr !== undefined) {
+      classStr = strToArray(classStr);
+      cls = ' ' + node.className + ' ';
+      for (var i = 0, len = classStr.length; i < len; ++i) {
+        cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+      }
+      cls = cls.trim();
+    } else {
+      cls = '';
+    }
+    if (node.className != cls) {
+      node.className = cls;
+    }
+  };
+
+  var toggleClass = function(node, classStr) {
+    var cls = ' ' + node.className + ' ';
+    if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+      removeClass(node, classStr);
+    } else {
+      addClass(node, classStr);
+    }
+  };
+
+  var ua = navigator.userAgent;
+  var isFF = parseFloat(ua.split('Firefox/')[1]) || undefined;
+  var isWK = parseFloat(ua.split('WebKit/')[1]) || undefined;
+  var isOpera = parseFloat(ua.split('Opera/')[1]) || undefined;
+
+  var canTransition = (function() {
+  var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+  // test to determine if this browser can handle CSS transitions.
+  var cachedCanTransition = 
+    (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+    return function() { return cachedCanTransition; }
+  })();
+
+  //
+  // Slide class
+  //
+  var Slide = function(node, idx) {
+    this._node = node;
+    if (idx >= 0) {
+      this._count = idx + 1;
+    }
+    if (this._node) {
+      addClass(this._node, 'slide distant-slide');
+    }
+    this._makeCounter();
+    this._makeBuildList();
+  };
+
+  Slide.prototype = {
+    _node: null,
+    _count: 0,
+    _buildList: [],
+    _visited: false,
+    _currentState: '',
+    _states: [ 'distant-slide', 'far-past',
+               'past', 'current', 'future',
+               'far-future', 'distant-slide' ],
+    setState: function(state) {
+      if (typeof state != 'string') {
+        state = this._states[state];
+      }
+      if (state == 'current' && !this._visited) {
+        this._visited = true;
+        this._makeBuildList();
+      }
+      removeClass(this._node, this._states);
+      addClass(this._node, state);
+      this._currentState = state;
+
+      // delay first auto run. Really wish this were in CSS.
+      /*
+      this._runAutos();
+      */
+      var _t = this;
+      setTimeout(function(){ _t._runAutos(); } , 400);
+    },
+    _makeCounter: function() {
+      if(!this._count || !this._node) { return; }
+      var c = doc.createElement('span');
+      c.innerHTML = this._count;
+      c.className = 'counter';
+      this._node.appendChild(c);
+    },
+    _makeBuildList: function() {
+      this._buildList = [];
+      if (disableBuilds) { return; }
+      if (this._node) {
+        this._buildList = query('[data-build] > *', this._node);
+      }
+      this._buildList.forEach(function(el) {
+        addClass(el, 'to-build');
+      });
+    },
+    _runAutos: function() {
+      if (this._currentState != 'current') {
+        return;
+      }
+      // find the next auto, slice it out of the list, and run it
+      var idx = -1;
+      this._buildList.some(function(n, i) {
+        if (n.hasAttribute('data-auto')) {
+          idx = i;
+          return true;
+        }
+        return false;
+      });
+      if (idx >= 0) {
+        var elem = this._buildList.splice(idx, 1)[0];
+        var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+        var _t = this;
+        if (canTransition()) {
+          var l = function(evt) {
+            elem.parentNode.removeEventListener(transitionEnd, l, false);
+            _t._runAutos();
+          };
+          elem.parentNode.addEventListener(transitionEnd, l, false);
+          removeClass(elem, 'to-build');
+        } else {
+          setTimeout(function() {
+            removeClass(elem, 'to-build');
+            _t._runAutos();
+          }, 400);
+        }
+      }
+    },
+    buildNext: function() {
+      if (!this._buildList.length) {
+        return false;
+      }
+      removeClass(this._buildList.shift(), 'to-build');
+      return true;
+    },
+  };
+
+  //
+  // SlideShow class
+  //
+  var SlideShow = function(slides) {
+    this._slides = (slides || []).map(function(el, idx) {
+      return new Slide(el, idx);
+    });
+
+    var h = window.location.hash;
+    try {
+      this.current = parseInt(h.split('#slide')[1], 10);
+    }catch (e) { /* squeltch */ }
+    this.current = isNaN(this.current) ? 1 : this.current;
+    var _t = this;
+    doc.addEventListener('keydown', 
+        function(e) { _t.handleKeys(e); }, false);
+    doc.addEventListener('mousewheel', 
+        function(e) { _t.handleWheel(e); }, false);
+    doc.addEventListener('DOMMouseScroll', 
+        function(e) { _t.handleWheel(e); }, false);
+    doc.addEventListener('touchstart', 
+        function(e) { _t.handleTouchStart(e); }, false);
+    doc.addEventListener('touchend', 
+        function(e) { _t.handleTouchEnd(e); }, false);
+    window.addEventListener('popstate',
+        function(e) { _t.go(e.state); }, false);
+    this._update();
+  };
+
+  SlideShow.prototype = {
+    _slides: [],
+    _update: function(dontPush) {
+      document.querySelector('#presentation-counter').innerText = this.current;
+      if (history.pushState) {
+        if (!dontPush) {
+          history.pushState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+        }
+      } else {
+        window.location.hash = 'slide' + this.current;
+      }
+      for (var x = this.current-1; x < this.current + 7; x++) {
+        if (this._slides[x-4]) {
+          this._slides[x-4].setState(Math.max(0, x-this.current));
+        }
+      }
+    },
+
+    current: 0,
+    next: function() {
+      if (!this._slides[this.current-1].buildNext()) {
+        this.current = Math.min(this.current + 1, this._slides.length);
+        this._update();
+      }
+    },
+    prev: function() {
+      this.current = Math.max(this.current-1, 1);
+      this._update();
+    },
+    go: function(num) {
+      if (!num) return;
+      if (history.pushState && this.current != num) {
+        history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+      }
+      this.current = num;
+      this._update(true);
+    },
+
+    _notesOn: false,
+    showNotes: function() {
+      var isOn = this._notesOn = !this._notesOn;
+      query('.notes').forEach(function(el) {
+        el.style.display = (notesOn) ? 'block' : 'none';
+      });
+    },
+    switch3D: function() {
+      toggleClass(document.body, 'three-d');
+    },
+    handleWheel: function(e) {
+      var delta = 0;
+      if (e.wheelDelta) {
+        delta = e.wheelDelta/120;
+        if (isOpera) {
+          delta = -delta;
+        }
+      } else if (e.detail) {
+        delta = -e.detail/3;
+      }
+
+      if (delta > 0 ) {
+        this.prev();
+        return;
+      }
+      if (delta < 0 ) {
+        this.next();
+        return;
+      }
+    },
+    handleKeys: function(e) {
+      
+      if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
+      
+      switch (e.keyCode) {
+        case 37: // left arrow
+          this.prev(); break;
+        case 39: // right arrow
+        case 32: // space
+          this.next(); break;
+        case 50: // 2
+          this.showNotes(); break;
+        case 51: // 3
+          this.switch3D(); break;
+      }
+    },
+    _touchStartX: 0,
+    handleTouchStart: function(e) {
+      this._touchStartX = e.touches[0].pageX;
+    },
+    handleTouchEnd: function(e) {
+      var delta = this._touchStartX - e.changedTouches[0].pageX;
+      var SWIPE_SIZE = 150;
+      if (delta > SWIPE_SIZE) {
+        this.next();
+      } else if (delta< -SWIPE_SIZE) {
+         this.prev();
+       }
+    },
+  };
+
+  // Initialize
+  var slideshow = new SlideShow(query('.slide'));
+})();
+
+  </script>
+  <!--[if lt IE 9]>
+  <script 
+  src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({ mode: "overlay" });</script>
+  <![endif]--> 
+  </body> 
+</html>

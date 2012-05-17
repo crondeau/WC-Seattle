@@ -1,4 +1,5 @@
 WC-Seattle
 ==========
 
-WordCamp Seattle 2012 Slides
+Presentation Slides used for WordCamp Seattle 2012
+Presentation Topic - How to Build a Custom Portfolio Feature Slider
